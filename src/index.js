@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App1 from './App1';
+// import react browser router/ as an alias importation// to wrap around the App Component
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ProductProvider } from './Context';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProductProvider>
+      <Router>
+        <App1 />
+      </Router>
+    </ProductProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
